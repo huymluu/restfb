@@ -15,6 +15,11 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <project.build.source>1.6</project.build.source>
     <project.build.target>1.6</project.build.target>
+    <groupId>${project.groupId}</groupId>
+    <artifactId>${project.artifactId}</artifactId>
+    <version>${project.version}</version>
+    <packaging>${project.packaging}</packaging>
+    <file>target/${project.artifactId}-${project.version}.jar</file>
   </properties>
 
   <licenses>
@@ -177,6 +182,19 @@
           <execution>
             <goals>
               <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-install-plugin</artifactId>
+        <version>2.5.2</version>
+        <executions>
+          <execution>
+            <phase>install</phase>
+            <goals>
+              <goal>install-file</goal>
             </goals>
           </execution>
         </executions>
