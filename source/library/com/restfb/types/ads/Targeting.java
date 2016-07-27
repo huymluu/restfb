@@ -98,6 +98,11 @@ public class Targeting extends AbstractFacebookType {
 
   @Getter
   @Setter
+  @Facebook("publisher_platforms")
+  private List<String> publisherPlatforms;
+
+  @Getter
+  @Setter
   @Facebook("device_platforms")
   private List<String> devicePlatforms;
 
